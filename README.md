@@ -1,3 +1,26 @@
+# acados-python-windows
+This is a slightly revisioned version of the original acados repository with the Python interface made compatible with Windows OS.
+
+## Installation and Setup:
+Make sure you have MSVC 16 2019 installed.
+```
+https://github.com/Herpderk/acados-python-windows.git
+cd acados-python-windows
+git submodule update --recursive --init
+mkdir build
+cd build
+cmake -G "Visual Studio 16 2019" -DBLASFEO_TARGET=GENERIC -DACADOS_INSTALL_DIR=.. -DACADOS_WITH_QPOASES=ON .. -DBUILD_SHARED_LIBS=ON ..
+cmake --build . -j10 --target INSTALL --config Release
+cd ..
+pip install -e interfaces/acados_template
+```
+Then add ```<path_to_acados-python-windows>/lib``` to your ```Path``` environment variable as well as the following standalone environment variable:
+```
+ACADOS_SOURCE_DIR = <path_to_acados-python-windows>
+```
+
+
+# Original Documentation:
 # acados
 <!-- [![Travis Status](https://secure.travis-ci.org/acados/acados.png?branch=master)](http://travis-ci.org/acados/acados) -->
 [![Appveyor status](https://ci.appveyor.com/api/projects/status/q0b2nohk476u5clg?svg=true)](https://ci.appveyor.com/project/roversch/acados)
