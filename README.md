@@ -2,7 +2,7 @@
 This is a slightly revisioned version of the original acados repository with the Python interface made compatible with Windows OS.
 
 ## Installation and Setup:
-Make sure you have MSVC 16 2019 installed.
+Make sure you have Visual Studio Community 2019 and CMake installed. Call on the following commands in the Developer Command Prompt for VS 2019:
 ```
 https://github.com/Herpderk/acados-python-windows.git
 cd acados-python-windows
@@ -18,7 +18,7 @@ Then add ```<path_to_acados-python-windows>/lib``` to your ```Path``` environmen
 ```
 ACADOS_SOURCE_DIR = <path_to_acados-python-windows>
 ```
-
+All scripts running the acados Python interface must be called in the Developer Command Prompt for VS 2019 as well.
 
 # Original Documentation:
 # acados
