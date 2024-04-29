@@ -9,7 +9,7 @@ cd acados-python-windows
 git submodule update --recursive --init
 mkdir build
 cd build
-cmake -G "Visual Studio 16 2019" -DBLASFEO_TARGET=GENERIC -DACADOS_INSTALL_DIR=.. -DACADOS_WITH_QPOASES=ON .. -DBUILD_SHARED_LIBS=ON ..
+cmake -G "Visual Studio 16 2019" -DBLASFEO_TARGET=GENERIC -DACADOS_INSTALL_DIR=.. -DACADOS_WITH_QPOASES=ON.. -DBUILD_SHARED_LIBS=ON ..
 cmake --build . -j10 --target INSTALL --config Release
 cd ..
 pip install -e interfaces/acados_template
