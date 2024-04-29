@@ -88,7 +88,10 @@ def sim_render_templates(json_file, model_name: str, code_export_dir, cmake_opti
 
     # Render templates
     in_file = 'acados_sim_solver.in.c'
-    out_file = f'acados_sim_solver_{model_name}.c'
+    if os.name == "nt":
+        out_file = f'acados_solver_{model_name}.c'
+    else:
+        out_file = f'acados_sim_solver_{model_name}.c'
     render_template(in_file, out_file, code_export_dir, json_path)
 
     in_file = 'acados_sim_solver.in.h'
@@ -276,7 +279,10 @@ class AcadosSimSolver:
                 print('acados was compiled with OpenMP.')
             else:
                 print('acados was compiled without OpenMP.')
-        libacados_sim_solver_name = f'{lib_prefix}acados_sim_solver_{self.model_name}{lib_ext}'
+        if os.name == "nt":
+            libacados_sim_solver_name = f'{lib_prefix}acados_ocp_solver_{self.model_name}{lib_ext}'
+        else:
+            libacados_sim_solver_name = f'{lib_prefix}acados_sim_solver_{self.model_name}{lib_ext}'
         self.shared_lib_name = os.path.join(code_export_dir, libacados_sim_solver_name)
 
         # get shared_lib

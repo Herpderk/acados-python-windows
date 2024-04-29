@@ -51,7 +51,8 @@ class CMakeBuilder:
         """Defines the generator, options can be found via `cmake --help` under 'Generator'. Type: string. Linux default 'Unix Makefiles', Windows 'Visual Studio 15 2017 Win64'; default value: `None`."""
         # set something for Windows
         if os.name == 'nt':
-            self.generator = 'Visual Studio 15 2017 Win64'
+            #self.generator = 'Visual Studio 15 2017 Win64'
+            self.generator = 'Visual Studio 16 2019'
         self.build_targets = None
         """A comma-separated list of the build targets, if `None` then all targets will be build; type: List of strings; default: `None`."""
         self.options_on = None

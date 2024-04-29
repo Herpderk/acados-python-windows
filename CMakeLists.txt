@@ -54,7 +54,7 @@ set(HPIPM_TARGET "X64_AUTOMATIC" CACHE STRING "HPIPM Target architecture")
 set(LA "HIGH_PERFORMANCE" CACHE STRING "Linear algebra optimization level")
 
 if (CMAKE_SYSTEM_NAME MATCHES "Windows")
-    set(BUILD_SHARED_LIBS OFF CACHE STRING "Build shared libraries")
+    set(BUILD_SHARED_LIBS ON CACHE STRING "Build shared libraries")
 else()
     set(BUILD_SHARED_LIBS ON CACHE STRING "Build shared libraries")
 endif()
